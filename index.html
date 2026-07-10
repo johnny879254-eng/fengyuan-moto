@@ -2,213 +2,100 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#17345b">
-<title>豐源機車行｜維修保養紀錄</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>豐源機車行｜維修保養系統 2.0</title>
 <style>
-:root{
-  --navy:#17345b; --blue:#2368a2; --light:#eef5fb; --white:#fff;
-  --ink:#1f2937; --muted:#6b7280; --ok:#16803a; --danger:#b42318;
-  --shadow:0 10px 26px rgba(23,52,91,.14);
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;background:linear-gradient(180deg,#eaf3fb,#f7fafc);color:var(--ink)}
-header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:20px 16px 24px;text-align:center}
-header h1{margin:0;font-size:28px;letter-spacing:2px}
-header p{margin:7px 0 0;font-size:15px;opacity:.92}
-.wrap{max-width:760px;margin:-10px auto 40px;padding:0 12px}
-.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-.tab{border:0;border-radius:16px;padding:16px 8px;font-size:19px;font-weight:800;background:#dce9f5;color:var(--navy)}
-.tab.active{background:#fff;box-shadow:var(--shadow)}
-.card{background:#fff;border-radius:20px;padding:18px;margin:12px 0;box-shadow:var(--shadow)}
-h2{font-size:22px;margin:0 0 14px;color:var(--navy)}
-label{display:block;font-size:16px;font-weight:800;margin:12px 0 6px}
-input,textarea,select{width:100%;font-size:20px;padding:14px;border:2px solid #cbd5e1;border-radius:13px;background:#fff}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.btn{width:100%;border:0;border-radius:15px;padding:16px 12px;font-size:19px;font-weight:900;cursor:pointer}
-.primary{background:var(--navy);color:#fff}
-.secondary{background:#e4eef7;color:var(--navy)}
-.success{background:var(--ok);color:#fff}
-.danger{background:#fee4e2;color:var(--danger)}
-.photo{display:block;text-align:center;background:#fff4cc;border:2px dashed #d49b00;border-radius:16px;padding:20px;font-size:22px;font-weight:900;color:#725000}
-.photo input{display:none}
-.items{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.item{border:2px solid #c7d7e7;background:#f7fbff;border-radius:14px;padding:15px 8px;text-align:center;font-size:18px;font-weight:800}
-.item.on{background:#d7f0df;border-color:#16803a;color:#0e5d29}
-.note{font-size:14px;color:var(--muted);line-height:1.6}
-.result{border-left:5px solid var(--blue);padding:12px 14px;background:#f4f8fc;border-radius:10px;margin:10px 0}
-.record{border:1px solid #d6e0ea;border-radius:14px;padding:14px;margin:10px 0}
-.record strong{font-size:18px;color:var(--navy)}
-.hidden{display:none!important}
-.badge{display:inline-block;background:#e1ecf7;color:var(--navy);border-radius:999px;padding:5px 10px;margin:3px;font-weight:700}
-footer{text-align:center;color:#64748b;padding:15px;font-size:13px}
-@media(max-width:420px){.items{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}header h1{font-size:25px}}
+*{box-sizing:border-box}body{margin:0;font-family:"Microsoft JhengHei",sans-serif;background:#eef3f8;color:#142033}
+button,input,textarea{font-family:inherit}.hidden{display:none!important}
+.home{min-height:100vh;background:#000;color:#fff;text-align:center;padding:20px 18px 110px}
+.brand{color:#ffd400;font-weight:900;font-size:19px}.home h1{font-size:40px;margin:62px 0}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px;margin:auto}
+.tile{border:0;border-radius:24px;padding:24px 10px;min-height:190px;font-size:21px;font-weight:900;background:linear-gradient(#dce8ff,#aac6ff)}
+.tile:nth-child(2){background:linear-gradient(#ffe8cc,#ffc98e)}.tile:nth-child(3){background:linear-gradient(#eee,#bbb)}
+.icon{display:block;font-size:65px;margin-bottom:15px}.count{font-size:23px;font-weight:900;margin-top:42px}
+.foot{position:fixed;bottom:0;left:0;right:0;background:#000;padding:15px;color:#fff}
+.page{max-width:760px;margin:auto;padding:0 12px 40px}.head{margin:0 -12px 16px;background:#566bc0;color:#fff;padding:14px;display:flex;justify-content:space-between;align-items:center}
+.head button{background:none;border:0;color:#fff;font-size:28px}.head h2{margin:0;font-size:22px}
+.card{background:#fff;border-radius:20px;padding:18px;margin:12px 0;box-shadow:0 8px 24px #18345d20}
+h3{margin:0 0 12px;color:#17365f;font-size:22px}label{display:block;font-weight:900;margin:12px 0 6px}
+input,textarea{width:100%;border:2px solid #ccd6e3;border-radius:14px;padding:14px;font-size:21px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.item{border:2px solid #ccd7e5;border-radius:14px;background:#f7fbff;padding:16px 8px;font-size:18px;font-weight:900}
+.item.on{background:#d7f0df;border-color:#16803a}.btn{width:100%;border:0;border-radius:15px;padding:16px;font-size:19px;font-weight:900}
+.ok{background:#16803a;color:#fff}.main{background:#1d2c67;color:#fff}.light{background:#e6eef8;color:#17365f}
+.badge{display:inline-block;background:#e5eef8;padding:5px 10px;border-radius:999px;margin:3px;font-weight:800}
+.record{border:1px solid #d6deea;border-radius:14px;padding:14px;margin:10px 0}.plate{font-size:32px;font-weight:900;text-align:center;color:#08609d}
+.cam{position:fixed;inset:0;background:#000;z-index:99;color:#fff;display:flex;flex-direction:column}
+.camtop{background:#566bc0;padding:14px;display:flex;justify-content:space-between}.camtop button{background:none;border:0;color:#fff;font-size:28px}
+.camview{position:relative;flex:1;overflow:hidden}.camview video{width:100%;height:100%;object-fit:cover}
+.frame{position:absolute;left:8%;right:8%;top:34%;height:26%;border:4px solid #ffd400;border-radius:18px;box-shadow:0 0 0 9999px #0006}
+.tip{position:absolute;left:0;right:0;bottom:16%;text-align:center;font-size:20px;font-weight:900}
+.shot{margin:18px auto;width:86px;height:86px;border-radius:50%;border:8px solid #fff;background:#ddd}
+.preview{width:100%;border-radius:14px}
+@media(max-width:520px){.menu{grid-template-columns:1fr 1fr}.tile:nth-child(3){grid-column:1/-1}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header>
-  <h1>豐源機車行</h1>
-  <p>快速登記｜維修履歷｜保養查詢</p>
-</header>
+<section id="home" class="home">
+<div class="brand">BuBu 維修達人</div><h1>豐源機車行</h1>
+<div class="menu">
+<button class="tile" onclick="show('entry')"><span class="icon">⌨️</span>車牌輸入</button>
+<button class="tile" onclick="openCamera()"><span class="icon">📷</span>車牌辨識</button>
+<button class="tile" onclick="show('history')"><span class="icon">📝</span>查詢歷史</button>
+</div><div class="count">車籍 <span id="count">0</span> 已儲存</div>
+<div class="foot">豐源機車行｜version 2.0 測試版</div>
+</section>
 
-<div class="wrap">
-  <div class="tabs">
-    <button class="tab active" onclick="showPage('admin',this)">店內快速登記</button>
-    <button class="tab" onclick="showPage('customer',this)">顧客查詢</button>
-  </div>
+<section id="entry" class="page hidden">
+<div class="head"><button onclick="show('home')">‹</button><h2>快速登記</h2><button onclick="show('home')">⌂</button></div>
+<div class="card"><h3>① 車牌與車主資料</h3>
+<label>車牌號碼</label><input id="plate" placeholder="例如 N3B-703">
+<div class="grid"><div><label>手機號碼</label><input id="phone" inputmode="tel"></div><div><label>目前里程</label><input id="mileage" inputmode="numeric"></div></div></div>
+<div class="card"><h3>② 點選更換項目</h3><div id="items" class="items"></div><label>其他項目</label><input id="other"></div>
+<div class="card"><h3>③ 金額與備註</h3>
+<div class="grid"><div><label>總金額</label><input id="amount" inputmode="numeric"></div><div><label>下次保養里程</label><input id="next" inputmode="numeric"></div></div>
+<label>備註</label><textarea id="memo" rows="3"></textarea>
+<button class="btn ok" style="margin-top:14px" onclick="save()">✅ 儲存這筆紀錄</button></div>
+</section>
 
-  <section id="adminPage">
-    <div class="card">
-      <h2>① 拍車牌或輸入車牌</h2>
-      <label class="photo">📷 拍攝車牌
-        <input id="platePhoto" type="file" accept="image/*" capture="environment">
-      </label>
-      <p id="ocrStatus" class="note">拍照後可嘗試自動辨識。第一次使用辨識功能時需要網路。</p>
-      <label>車牌號碼</label>
-      <input id="plate" placeholder="例如 ABC-1234" autocomplete="off">
-      <div class="grid2">
-        <div><label>手機號碼</label><input id="phone" inputmode="tel" placeholder="09xxxxxxxx"></div>
-        <div><label>目前里程</label><input id="mileage" inputmode="numeric" placeholder="例如 25680"></div>
-      </div>
-    </div>
+<section id="history" class="page hidden">
+<div class="head"><button onclick="show('home')">‹</button><h2>車籍及維修紀錄查詢</h2><button onclick="show('home')">⌂</button></div>
+<div class="card"><label>車牌號碼</label><input id="qplate"><label>手機號碼</label><input id="qphone" inputmode="tel">
+<button class="btn main" style="margin-top:14px" onclick="search()">🔍 查詢</button></div><div id="results" class="card hidden"></div>
+</section>
 
-    <div class="card">
-      <h2>② 點選更換項目</h2>
-      <div id="items" class="items"></div>
-      <label>其他項目</label>
-      <input id="otherItem" placeholder="例如 傳動清潔、燈泡">
-    </div>
+<section id="camera" class="cam hidden">
+<div class="camtop"><button onclick="closeCam()">‹</button><strong>車牌辨識</strong><button onclick="closeCam()">⌂</button></div>
+<div class="camview"><video id="video" autoplay playsinline muted></video><div class="frame"></div><div class="tip">請將車牌對準黃色框內</div></div>
+<button class="shot" onclick="capture()"></button>
+</section>
 
-    <div class="card">
-      <h2>③ 金額與備註</h2>
-      <div class="grid2">
-        <div><label>總金額</label><input id="amount" inputmode="numeric" placeholder="例如 350"></div>
-        <div><label>下次保養里程</label><input id="nextMileage" inputmode="numeric" placeholder="例如 26680"></div>
-      </div>
-      <label>備註</label>
-      <textarea id="memo" rows="3" placeholder="例如：使用 10W-40 機油"></textarea>
-      <button class="btn success" style="margin-top:14px" onclick="saveRecord()">✅ 儲存這筆紀錄</button>
-      <button class="btn secondary" style="margin-top:10px" onclick="clearForm()">清空重新輸入</button>
-    </div>
-
-    <div class="card">
-      <h2>最近登記紀錄</h2>
-      <div id="recentRecords"></div>
-      <div class="grid2" style="margin-top:12px">
-        <button class="btn secondary" onclick="exportData()">下載備份</button>
-        <label class="btn secondary" style="text-align:center">匯入備份
-          <input id="importFile" type="file" accept=".json" style="display:none">
-        </label>
-      </div>
-    </div>
-  </section>
-
-  <section id="customerPage" class="hidden">
-    <div class="card">
-      <h2>查詢我的維修保養紀錄</h2>
-      <label>車牌號碼</label>
-      <input id="qPlate" placeholder="例如 ABC-1234">
-      <label>手機號碼</label>
-      <input id="qPhone" inputmode="tel" placeholder="請輸入登記的手機號碼">
-      <button class="btn primary" style="margin-top:16px" onclick="searchCustomer()">🔍 查詢維修紀錄</button>
-      <p class="note">為保護資料，車牌與手機號碼必須同時符合。</p>
-    </div>
-    <div id="customerResults" class="card hidden"></div>
-  </section>
-</div>
-
-<footer>豐源機車行｜本測試版資料儲存在目前裝置的瀏覽器內</footer>
+<section id="ocr" class="page hidden">
+<div class="head"><button onclick="openCamera()">‹</button><h2>辨識結果</h2><button onclick="show('home')">⌂</button></div>
+<div class="card"><img id="preview" class="preview"><p id="status">準備辨識…</p>
+<label>辨識出的車牌</label><input id="ocrplate" class="plate">
+<button class="btn ok" style="margin-top:14px" onclick="usePlate()">使用這個車牌</button>
+<button class="btn light" style="margin-top:10px" onclick="openCamera()">重新拍攝</button></div>
+</section>
+<canvas id="canvas" class="hidden"></canvas>
 
 <script>
-const serviceItems=["機油","齒輪油","空氣濾清器","輪胎","煞車皮","電瓶","火星塞","皮帶"];
-let selected=new Set();
-const itemBox=document.getElementById("items");
-serviceItems.forEach(name=>{
-  const b=document.createElement("button");
-  b.type="button"; b.className="item"; b.textContent=name;
-  b.onclick=()=>{b.classList.toggle("on"); selected.has(name)?selected.delete(name):selected.add(name)};
-  itemBox.appendChild(b);
-});
-function normPlate(v){return (v||"").toUpperCase().replace(/\s/g,"").replace(/_/g,"-")}
-function normPhone(v){return (v||"").replace(/\D/g,"")}
-function getRecords(){try{return JSON.parse(localStorage.getItem("fy_records")||"[]")}catch(e){return[]}}
-function setRecords(v){localStorage.setItem("fy_records",JSON.stringify(v))}
-function showPage(page,btn){
- document.getElementById("adminPage").classList.toggle("hidden",page!=="admin");
- document.getElementById("customerPage").classList.toggle("hidden",page!=="customer");
- document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active")); btn.classList.add("active");
-}
-function saveRecord(){
- const plate=normPlate(document.getElementById("plate").value);
- const phone=normPhone(document.getElementById("phone").value);
- let allItems=[...selected];
- const other=document.getElementById("otherItem").value.trim(); if(other) allItems.push(other);
- if(!plate){alert("請先輸入或拍攝車牌");return}
- if(!phone){alert("請輸入顧客手機號碼");return}
- if(!allItems.length){alert("請至少選擇一個維修項目");return}
- const r={
-  id:Date.now(), date:new Date().toLocaleString("zh-TW"),
-  plate,phone,mileage:document.getElementById("mileage").value.trim(),
-  items:allItems,amount:document.getElementById("amount").value.trim(),
-  nextMileage:document.getElementById("nextMileage").value.trim(),
-  memo:document.getElementById("memo").value.trim()
- };
- const arr=getRecords(); arr.unshift(r); setRecords(arr); renderRecent(); clearForm();
- alert("已儲存："+plate);
-}
-function clearForm(){
- ["plate","phone","mileage","otherItem","amount","nextMileage","memo"].forEach(id=>document.getElementById(id).value="");
- selected.clear(); document.querySelectorAll(".item").forEach(x=>x.classList.remove("on"));
-}
-function renderRecent(){
- const box=document.getElementById("recentRecords"), arr=getRecords().slice(0,8);
- if(!arr.length){box.innerHTML='<p class="note">目前還沒有紀錄。</p>';return}
- box.innerHTML=arr.map(r=>`<div class="record"><strong>${r.plate}</strong>　${r.date}<br>
- ${r.items.map(x=>`<span class="badge">${x}</span>`).join("")}<br>
- <span class="note">里程：${r.mileage||"-"}｜金額：${r.amount?("$"+r.amount):"-"}｜下次：${r.nextMileage||"-"}</span>
- <button class="btn danger" style="margin-top:8px;padding:9px;font-size:15px" onclick="deleteRecord(${r.id})">刪除此筆</button></div>`).join("");
-}
-function deleteRecord(id){
- if(!confirm("確定刪除此筆紀錄？"))return;
- setRecords(getRecords().filter(x=>x.id!==id)); renderRecent();
-}
-function searchCustomer(){
- const p=normPlate(document.getElementById("qPlate").value), ph=normPhone(document.getElementById("qPhone").value);
- const arr=getRecords().filter(r=>r.plate===p && r.phone===ph);
- const box=document.getElementById("customerResults"); box.classList.remove("hidden");
- if(!arr.length){box.innerHTML="<h2>查詢結果</h2><p>找不到符合的紀錄，請確認車牌與手機號碼。</p>";return}
- box.innerHTML=`<h2>${p} 維修履歷</h2>`+arr.map(r=>`<div class="result"><strong>${r.date}</strong><br>
- ${r.items.map(x=>`<span class="badge">${x}</span>`).join("")}<br>
- 里程：${r.mileage||"-"}<br>金額：${r.amount?("$"+r.amount):"-"}<br>
- 下次保養里程：${r.nextMileage||"-"}${r.memo?("<br>備註："+r.memo):""}</div>`).join("");
-}
-function exportData(){
- const blob=new Blob([JSON.stringify(getRecords(),null,2)],{type:"application/json"});
- const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="豐源機車行_維修紀錄備份.json"; a.click();
- URL.revokeObjectURL(a.href);
-}
-document.getElementById("importFile").addEventListener("change",async e=>{
- const f=e.target.files[0]; if(!f)return;
- try{const data=JSON.parse(await f.text()); if(!Array.isArray(data))throw 0; setRecords(data);renderRecent();alert("備份匯入完成")}
- catch(err){alert("檔案格式不正確")}
-});
-document.getElementById("platePhoto").addEventListener("change",async e=>{
- const file=e.target.files[0]; if(!file)return;
- const status=document.getElementById("ocrStatus");
- status.textContent="正在辨識車牌，請稍候…";
- try{
-  if(!window.Tesseract){
-   await new Promise((res,rej)=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";s.onload=res;s.onerror=rej;document.head.appendChild(s)});
-  }
-  const out=await Tesseract.recognize(file,"eng",{logger:m=>{if(m.status==="recognizing text")status.textContent=`辨識中 ${Math.round((m.progress||0)*100)}%`}});
-  const raw=(out.data.text||"").toUpperCase();
-  const match=raw.match(/[A-Z0-9]{2,4}\s*[- ]?\s*[A-Z0-9]{2,4}/);
-  if(match){document.getElementById("plate").value=normPlate(match[0]);status.textContent="已辨識，請確認車牌是否正確。"}
-  else status.textContent="沒有清楚辨識到車牌，請直接輸入或重新拍攝。";
- }catch(err){status.textContent="辨識功能目前無法連線，請直接輸入車牌。";}
-});
-renderRecent();
+const names=["機油","齒輪油","空氣濾清器","輪胎","煞車皮","電瓶","火星塞","皮帶"];let sel=new Set(),stream=null;
+names.forEach(n=>{let b=document.createElement("button");b.className="item";b.textContent=n;b.onclick=()=>{b.classList.toggle("on");sel.has(n)?sel.delete(n):sel.add(n)};items.appendChild(b)});
+function show(id){closeStream();["home","entry","history","camera","ocr"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");updateCount();scrollTo(0,0)}
+function norm(v){let s=(v||"").toUpperCase().replace(/[^A-Z0-9]/g,"");return s.length>=6?s.slice(0,3)+"-"+s.slice(3):s}
+function records(){try{return JSON.parse(localStorage.getItem("fy_v2")||"[]")}catch(e){return[]}}
+function setRecords(x){localStorage.setItem("fy_v2",JSON.stringify(x));updateCount()}
+function updateCount(){count.textContent=new Set(records().map(x=>x.plate)).size}
+function save(){let p=norm(plate.value),ph=phone.value.replace(/\D/g,""),it=[...sel];if(other.value.trim())it.push(other.value.trim());if(!p||!ph||!it.length)return alert("請填車牌、手機並選擇項目");let a=records();a.unshift({id:Date.now(),date:new Date().toLocaleString("zh-TW"),plate:p,phone:ph,mileage:mileage.value,items:it,amount:amount.value,next:next.value,memo:memo.value});setRecords(a);alert("已儲存："+p);show("home")}
+function search(){let p=norm(qplate.value),ph=qphone.value.replace(/\D/g,""),a=records().filter(x=>x.plate===p&&x.phone===ph);results.classList.remove("hidden");results.innerHTML=a.length?`<div class="plate">${p}</div>`+a.map(r=>`<div class="record"><strong>${r.date}</strong><br>${r.items.map(x=>`<span class="badge">${x}</span>`).join("")}<br>里程：${r.mileage||"-"}<br>金額：${r.amount||"-"}<br>下次保養：${r.next||"-"}${r.memo?"<br>備註："+r.memo:""}</div>`).join(""):"找不到符合紀錄"}
+async function openCamera(){show("camera");try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false});video.srcObject=stream}catch(e){alert("無法開啟相機，請允許相機權限");show("home")}}
+function closeStream(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}}function closeCam(){show("home")}
+function prep(c){let x=c.getContext("2d"),im=x.getImageData(0,0,c.width,c.height),d=im.data;for(let i=0;i<d.length;i+=4){let g=.299*d[i]+.587*d[i+1]+.114*d[i+2];g=g<145?0:255;d[i]=d[i+1]=d[i+2]=g}x.putImageData(im,0,0)}
+function best(t){let m=(t||"").toUpperCase().match(/[A-Z0-9]{2,4}\s*[-. ]?\s*[A-Z0-9]{3,4}/);return m?norm(m[0]):norm(t)}
+async function capture(){let vw=video.videoWidth,vh=video.videoHeight;if(!vw)return;canvas.width=1500;canvas.height=460;canvas.getContext("2d").drawImage(video,vw*.08,vh*.34,vw*.84,vh*.26,0,0,1500,460);prep(canvas);preview.src=canvas.toDataURL("image/jpeg",.92);closeStream();show("ocr");status.textContent="正在辨識…";try{if(!window.Tesseract)await new Promise((r,j)=>{let s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";s.onload=r;s.onerror=j;document.head.appendChild(s)});let out=await Tesseract.recognize(canvas,"eng",{logger:m=>{if(m.status==="recognizing text")status.textContent=`辨識中 ${Math.round((m.progress||0)*100)}%`}});ocrplate.value=best(out.data.text);status.textContent="已完成，請確認車牌是否正確。"}catch(e){status.textContent="辨識失敗，請手動輸入。"}}
+function usePlate(){if(!ocrplate.value)return alert("請輸入車牌");plate.value=norm(ocrplate.value);show("entry")}
+updateCount()
 </script>
-</body>
-</html>
+</body></html>
